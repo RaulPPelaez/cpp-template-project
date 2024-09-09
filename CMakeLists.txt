@@ -7,9 +7,9 @@ set(CMAKE_CXX_STANDARD 17) # This sets the C++ standard to C++17
 set(CMAKE_CXX_STANDARD_REQUIRED True) # This tells CMake that the stdandard must be available
 
 # We place the executables in the bin directory
-set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # We place the libraries in the lib directory
-set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # Our C++ project contains a single executable built from src/main.cpp
 # It uses the definitions in src/my_library.cpp,  which are defined in the header file src/my_library.h
