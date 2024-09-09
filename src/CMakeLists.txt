@@ -1,6 +1,5 @@
 # Our C++ project contains a single executable built from main.cpp
 # It uses the definitions in my_library.cpp,  which are defined in the header file my_library.h
-
 # Lets compile the library first
 add_library(my_library SHARED my_library.cpp)
 # Now we compile the executable

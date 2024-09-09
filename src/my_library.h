@@ -8,4 +8,6 @@ namespace my_library{
 
   void very_cool_function();
 
+  double add(double a, double b);
+
 }

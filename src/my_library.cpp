@@ -21,4 +21,8 @@ namespace my_library{
     detail::some_internal_function();
   }
 
+  double add(double a, double b){
+    return a+b;
+  }
+
 }

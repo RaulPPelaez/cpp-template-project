@@ -11,7 +11,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # We place the libraries in the lib directory
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# Our C++ project contains a single executable built from src/main.cpp
-# It uses the definitions in src/my_library.cpp,  which are defined in the header file src/my_library.h
 # We normally have a CMakeLists.txt file in each directory that has something that needs to be built
 add_subdirectory(src)
+add_subdirectory(tests)
