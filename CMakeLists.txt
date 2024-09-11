@@ -13,4 +13,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # We normally have a CMakeLists.txt file in each directory that has something that needs to be built
 add_subdirectory(src)
+enable_testing() # This line allows to call ctest after compilation
 add_subdirectory(tests)
+add_subdirectory(docs)

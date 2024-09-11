@@ -7,7 +7,7 @@ FetchContent_Declare(
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-enable_testing()
+
 include(GoogleTest)
 
 add_executable(test_my_library  test_my_library.cpp)
@@ -17,7 +17,6 @@ target_include_directories(test_my_library PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(
   test_my_library
   GTest::gtest_main
-  GTest::gmock_main
   my_library
 )
 # Add the test to the test suite
