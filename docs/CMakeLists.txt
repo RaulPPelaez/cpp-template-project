@@ -21,7 +21,7 @@ add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
 		MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
         	COMMENT "Generating docs"
 		VERBATIM)
-
+add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR}/sphinx)
 add_custom_target(Sphinx ALL
