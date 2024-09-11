@@ -1,4 +1,4 @@
-name: documentation
+name: cppdev
 channels:
   - conda-forge
   - defaults
