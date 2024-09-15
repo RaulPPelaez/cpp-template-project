@@ -10,14 +10,11 @@ FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
 
-add_executable(test_my_library  test_my_library.cpp)
-# Add src as an include so that we can include the header files in the tests
-target_include_directories(test_my_library PRIVATE ${CMAKE_SOURCE_DIR}/src)
-# Link the test executable with the library and GTest
+
+add_executable(test_doubly_linked_list  test_doubly_linked_list.cpp)
+target_include_directories(test_doubly_linked_list PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(
-  test_my_library
+  test_doubly_linked_list
   GTest::gtest_main
-  my_library
 )
-# Add the test to the test suite
-gtest_discover_tests(test_my_library)
+gtest_discover_tests(test_doubly_linked_list)

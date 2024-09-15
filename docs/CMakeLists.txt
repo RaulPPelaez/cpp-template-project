@@ -11,9 +11,7 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 # Doxygen won't create this for us
 file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
-# Only regenerate Doxygen when some public headers change
-get_target_property(PUBLIC_HEADER_DIR my_library INTERFACE_INCLUDE_DIRECTORIES)
-file(GLOB_RECURSE PUBLIC_HEADERS ${PUBLIC_HEADER_DIR}/*.h)
+file(GLOB_RECURSE PUBLIC_HEADERS ${PROJECT_SOURCE_DIR}/src/*.h)
 
 add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
 		DEPENDS ${PUBLIC_HEADERS}
