@@ -1,4 +1,4 @@
-MyVeryCoolProject documentation
+|project| documentation
 ===================================
 
 Welcome to the landing page!
@@ -6,8 +6,7 @@ Welcome to the landing page!
 A section
 ----------
 
-
-.. doxygennamespace:: linked_list
+.. doxygennamespace:: homework
 
 
 Docs

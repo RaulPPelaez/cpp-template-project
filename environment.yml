@@ -7,7 +7,7 @@ dependencies:
   - cmake
   - ninja
   - make
-  - gxx
+  - clangxx
   - doxygen
   - pip 
   - pip:

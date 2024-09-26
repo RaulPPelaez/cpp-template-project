@@ -1,9 +1,4 @@
 
-
-add_executable(privilege_escalation privilege_escalation.cpp)
-#Set compile with -O0 to avoid optimization
-set_target_properties(privilege_escalation PROPERTIES COMPILE_FLAGS "-O0")
-
-add_executable(memory_layout memory_layout.cpp)
-add_executable(casting casting.cpp)
-add_executable(pointer_arithmetics pointer_arithmetics.cpp)
+# Look for headers in the include directory
+include_directories(${CMAKE_SOURCE_DIR}/include)
+add_library(some_library SHARED some_library.cpp)

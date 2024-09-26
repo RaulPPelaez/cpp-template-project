@@ -7,14 +7,14 @@ FetchContent_Declare(
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-
 include(GoogleTest)
 
+# Make all targets in this directory look for headers here
+include_directories(${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)
+# Make all targets in this directory link against Gtest
+link_libraries(GTest::gtest_main)
 
-add_executable(test_doubly_linked_list  test_doubly_linked_list.cpp)
-target_include_directories(test_doubly_linked_list PRIVATE ${CMAKE_SOURCE_DIR}/src)
-target_link_libraries(
-  test_doubly_linked_list
-  GTest::gtest_main
-)
-gtest_discover_tests(test_doubly_linked_list)
+add_executable(test_some_library test_some_library.cpp) # Compile a test source
+# Link against any required libraries. The library "some_library" is compiled in src/
+target_link_libraries(test_some_library some_library)
+gtest_discover_tests(test_some_library)            # Register the tests to gtest
