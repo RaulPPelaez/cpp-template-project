@@ -6,6 +6,8 @@ set(DOXYGEN_INCLUDE_PATHS ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/homework $
 string(REPLACE ";" " " DOXYGEN_INPUT_DIR "${DOXYGEN_INCLUDE_PATHS}")
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/doxygen)
 set(DOXYGEN_INDEX_FILE ${DOXYGEN_OUTPUT_DIR}/xml/index.xml)
+set(DOXYGEN_GENERATE_HTML NO)
+set(DOXYGEN_GENERATE_LATEX NO)
 
 set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
 set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
@@ -13,7 +15,7 @@ set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 
 # Doxygen won't create this for us
-file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
+file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR}/xml)
 # Glob all .h files inside the directories listed in DOXYGEN_INCLUDE_DIRS to set them as dependencies
 # for recomplation of the documentation
 set(PUBLIC_HEADERS "")
