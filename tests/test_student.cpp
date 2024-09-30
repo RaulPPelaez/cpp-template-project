@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "student.h"
-using namespace homework;
+using namespace homework::student;
 
 TEST(StudentTest, ConstructorAndGetters) {
     Student s("Alice", 20, 8.5);

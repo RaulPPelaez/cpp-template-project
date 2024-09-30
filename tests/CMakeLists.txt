@@ -18,3 +18,11 @@ add_executable(test_student test_student.cpp) # Compile a test source
 # Link against any required libraries. The library "student" is compiled in src/
 target_link_libraries(test_student student)
 gtest_discover_tests(test_student)            # Register the tests to gtest
+
+add_executable(test_array test_array.cpp)
+target_link_libraries(test_array dynamic_array)
+gtest_discover_tests(test_array)
+
+
+add_executable(test_expression test_expression.cpp)
+gtest_discover_tests(test_expression)
