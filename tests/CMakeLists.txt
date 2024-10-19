@@ -14,7 +14,24 @@ include_directories(${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)
 # Make all targets in this directory link against Gtest
 link_libraries(GTest::gtest_main)
 
-add_executable(test_some_library test_some_library.cpp) # Compile a test source
-# Link against any required libraries. The library "some_library" is compiled in src/
-target_link_libraries(test_some_library some_library)
-gtest_discover_tests(test_some_library)            # Register the tests to gtest
+add_executable(test_split test_split.cpp)
+target_link_libraries(test_split split) # Note that we link against the library
+gtest_discover_tests(test_split)
+
+add_executable(test_mytype test_mytype.cpp)
+gtest_discover_tests(test_mytype)
+
+add_executable(test_sum test_sum.cpp)
+gtest_discover_tests(test_sum)
+
+add_executable(test_pair test_pair.cpp)
+gtest_discover_tests(test_pair)
+
+add_executable(test_transform test_transform.cpp) # Compile a test source
+gtest_discover_tests(test_transform)            # Register the tests to gtest
+
+add_executable(test_raw_pointer test_raw_pointer.cpp)
+gtest_discover_tests(test_raw_pointer)
+
+add_executable(test_flexible_container test_flexible_container.cpp)
+gtest_discover_tests(test_flexible_container)
