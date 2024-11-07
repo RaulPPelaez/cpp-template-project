@@ -9,7 +9,10 @@ dependencies:
   - make
   - clangxx
   - doxygen
-  - pip 
+  - pip
+  - pkg-config
+  - gnuplot==5.2
+  - fftw
   - pip:
     - breathe
     - sphinx

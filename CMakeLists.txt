@@ -13,6 +13,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # We place the libraries in the lib directory
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# Set prefix path to CONDA_PREFIX if defined and CMAKE_PREFIX_PATH is not set
+# We do this to avoid CMake looking for libraries and headers in the system directories
+if(DEFINED ENV{CONDA_PREFIX} AND NOT DEFINED CMAKE_PREFIX_PATH)
+  set(CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX})
+endif()
 
 # We normally have a CMakeLists.txt file in each directory that has something that needs to be built
 add_subdirectory(src)
