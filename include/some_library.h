@@ -8,6 +8,8 @@ namespace homework {
  * @param str This is a string
  * @return The result of the useful operation
  */
+
+
 int this_is_a_function(double a, std::string str);
 
 /**
